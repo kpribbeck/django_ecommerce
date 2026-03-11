@@ -21,11 +21,11 @@ class Product(models.Model):
     
 class ProductVariant(models.Model):
     product = models.ForeignKey(Product, on_delete=models.SET_NULL, null=True)
-    size = models.IntegerField(max_digits=8)
-    color = models.IntegerField(max_digits=8)
-    sku = models.IntegerField(max_digits=12)
+    size = models.IntegerField()
+    color = models.IntegerField()
+    sku = models.IntegerField()
     price_modifier = models.DecimalField(max_digits=10, decimal_places=2)
-    stock = models.IntegerField(max_digits=10)
+    stock = models.IntegerField()
 
     def __str__(self):
         return self.name
