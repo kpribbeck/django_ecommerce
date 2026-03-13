@@ -1,0 +1,19 @@
+
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <title>Store</title>
+  </head>
+  <body>
+    {% if biggest_products %}
+        <ul>
+        {% for product_variant in biggest_products %}
+            <li><a href="{% url 'store:product' product_variant.product.id %}">{{ product_variant.product.name }}</a></li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No products are available.</p>
+    {% endif %}
+  </body>
+</html>
